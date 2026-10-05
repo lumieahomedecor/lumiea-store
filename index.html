@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUMIÉA — Little things that make home feel magical.</title>
+<meta name="description" content="LUMIÉA — whimsical home decor, lighting and little pieces that make home feel magical.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#top"><span class="brand-mark">✦</span>LUMIÉA</a>
+  <nav>
+    <a href="#shop">Shop</a><a href="#collections">Collections</a><a href="#about">About</a><a href="#faq">FAQ</a>
+  </nav>
+  <button class="bag-btn" onclick="openCart()">Bag <span id="bagCount">0</span></button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">HOME, BUT A LITTLE MORE MAGICAL</p>
+    <h1>Make your space feel <em>like you.</em></h1>
+    <p class="hero-text">Whimsical lighting, playful decor and pretty little details curated to make ordinary corners feel special.</p>
+    <a class="btn primary" href="#shop">Shop the collection</a>
+  </div>
+  <div class="hero-art"><div class="orb">✿</div><div class="spark s1">✦</div><div class="spark s2">✧</div></div>
+</section>
+
+<section class="trust">
+  <div><b>Curated pieces</b><span>Chosen for cozy spaces</span></div>
+  <div><b>Easy checkout</b><span>Secure hosted payment</span></div>
+  <div><b>Made for gifting</b><span>Little things, big smiles</span></div>
+</section>
+
+<section id="collections" class="section">
+  <div class="section-head"><p class="eyebrow">EXPLORE LUMIÉA</p><h2>Find your little corner of magic.</h2></div>
+  <div class="collections">
+    <a href="#shop" class="collection bloom"><span>BLOOM</span><small>Floral & botanical</small></a>
+    <a href="#shop" class="collection dream"><span>DREAM ROOM</span><small>Soft lighting & glow</small></a>
+    <a href="#shop" class="collection cute"><span>CUTE CORNER</span><small>Playful desk decor</small></a>
+  </div>
+</section>
+
+<section id="shop" class="section shop">
+  <div class="section-head row"><div><p class="eyebrow">THE LUMIÉA EDIT</p><h2>Little things you'll love.</h2></div><span class="pill">5 launch pieces</span></div>
+  <div id="productGrid" class="products"></div>
+</section>
+
+<section id="about" class="about section">
+  <div class="about-art">L<span>✿</span>A</div>
+  <div><p class="eyebrow">OUR STORY</p><h2>Your home doesn't have to look like everyone else's.</h2>
+  <p>LUMIÉA was created for people who believe a home should feel personal, playful and a little dreamy. We curate statement pieces and tiny details that turn everyday spaces into somewhere you actually want to be.</p>
+  <a href="#shop" class="text-link">Explore the edit →</a></div>
+</section>
+
+<section id="faq" class="section faq">
+  <div class="section-head"><p class="eyebrow">NEED TO KNOW</p><h2>Frequently asked questions.</h2></div>
+  <details><summary>How does checkout work?</summary><p>Add your favorites to your bag and continue to checkout. You'll be sent to a secure hosted payment page for the available payment method.</p></details>
+  <details><summary>How long is shipping?</summary><p>Delivery time depends on the product and destination. Your final shipping estimate should be confirmed before purchase.</p></details>
+  <details><summary>Do you ship internationally?</summary><p>International delivery may be available for selected products. Availability and shipping cost depend on destination.</p></details>
+  <details><summary>What if my order arrives damaged?</summary><p>Contact LUMIÉA as soon as possible with your order number and clear photos/video of the package and item. We'll review the issue and help with the next steps.</p></details>
+  <details><summary>Are electrical products safe?</summary><p>Always check the product's voltage, plug type, installation requirements and supplier safety information for your destination before purchase.</p></details>
+</section>
+</main>
+
+<footer>
+  <div><a class="brand" href="#top"><span class="brand-mark">✦</span>LUMIÉA</a><p>Little things that make home feel magical.</p></div>
+  <div><b>Shop</b><a href="#shop">All products</a><a href="#collections">Collections</a></div>
+  <div><b>Help</b><a href="#faq">FAQ</a><a href="mailto:hello@yourdomain.com">Contact</a></div>
+  <div><b>Follow</b><a href="#">TikTok</a><a href="#">Instagram</a></div>
+</footer>
+<div class="copyright">© 2026 LUMIÉA. All rights reserved.</div>
+
+<div id="cartOverlay" class="overlay hidden" onclick="closeCart(event)">
+  <aside class="cart" onclick="event.stopPropagation()">
+    <div class="cart-head"><h2>Your bag</h2><button onclick="closeCart()">×</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+    <button class="btn primary full" onclick="checkout()">Continue to checkout</button>
+    <p class="fine">Prices are shown in USD. Replace placeholder payment links before launch.</p>
+  </aside>
+</div>
+
+<div id="checkoutOverlay" class="overlay hidden">
+  <div class="checkout">
+    <button class="close" onclick="closeCheckout()">×</button>
+    <p class="eyebrow">SECURE CHECKOUT</p><h2>Almost yours.</h2>
+    <div id="checkoutSummary"></div>
+    <form onsubmit="submitCheckout(event)">
+      <label>Full name<input required id="name" placeholder="Your name"></label>
+      <label>Email<input required type="email" id="email" placeholder="you@example.com"></label>
+      <label>Shipping address<input required id="address" placeholder="Street address"></label>
+      <div class="two"><label>City / Parish<input required id="city" placeholder="City"></label><label>Country<input required id="country" value="Jamaica"></label></div>
+      <button class="btn primary full" type="submit">Proceed to payment</button>
+    </form>
+    <p class="fine">You'll be redirected to the secure payment provider. Never enter card details into this page.</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

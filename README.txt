@@ -1,50 +1,27 @@
-LUMIÉA — FULL PRODUCT STORE
-============================
+LUMIÉA — FIXED GITHUB UPDATE
 
-This ZIP is designed to replace the files in your GitHub Pages repository.
+This ZIP fixes the product-image issues in the previous storefront.
 
-Included:
-- index.html
-- styles.css
-- script.js
-- assets/products/ — 29 local branded image placeholders
-- README.txt
+Changes:
+- Removed the 3 listings that did not have a real supplied product photo:
+  1) Cute Animal Light-Switch Covers
+  2) Fairy Pink Outlet Cover
+  3) Purple Sand Ceramic Flower Pot
+- Updated the catalog from 31 products to 28 products.
+- Replaced the Plant Buddy video screenshot with a clean product-style image.
+- Replaced the Shark Condiment Serving Dish video screenshot with a cleaned product image based on the supplied video still.
+- Kept the remaining supplied product photos, categories, shopping bag, filters and lightbox.
 
-CATALOG
--------
-Every product currently represented from the product pictures discussed in this project is included and categorized.
+IMPORTANT:
+The Plant Buddy image is a generated product-style visual intended as a clean website replacement; it is not a supplier-verified photo of the exact SKU. Before taking orders, match the product to your supplier listing and use supplier-approved commercial media when available.
+The shark image is cleaned from the supplied reference/video still.
 
-Collections:
-- DREAM ROOM
-- BLOOM
-- CUTE CORNER
-- EVERYDAY CUTE
+GITHUB:
+1. Open the lumiea-store repository.
+2. Replace index.html, styles.css, and script.js.
+3. Upload/replace the entire assets folder.
+4. Commit changes to the main branch.
+5. Wait for GitHub Pages to redeploy, then refresh the live site.
 
-IMPORTANT PRODUCT-MEDIA NOTE
-----------------------------
-The original uploaded inspiration photos were not available to the file-export system when this ZIP was generated, so this package does NOT pretend to contain those original photos.
-Each product has a local branded placeholder. Replace those SVG files with supplier-approved commercial product images before launch.
-
-GITHUB UPDATE
--------------
-1. Unzip this folder.
-2. Open your GitHub repository: lumiea-store.
-3. Upload/replace index.html, styles.css, script.js.
-4. Upload the entire assets folder.
-5. Commit the changes to the main branch.
-6. GitHub Pages should rebuild automatically.
-
-PAYMENTS
---------
-The checkout currently shows a setup notice. Connect your verified WiPay payment links before taking orders.
-Never put a private WiPay API key or other secret credential in script.js.
-
-PRICING
--------
-Product prices are intentionally shown as "Price TBD" until supplier cost, shipping, payment fees, taxes/duties, and desired margin are verified.
-
-SUPPLIER
---------
-Use supplier-approved media and verify each exact product before publishing. For electrical items, sinks, and other safety-sensitive products, verify specifications and compatibility.
-
-Generated for LUMIÉA.
+Do not upload API keys or bank/payment credentials into these frontend files.
+Prices remain "Price TBD" until supplier cost, shipping, payment fees and margin are verified.

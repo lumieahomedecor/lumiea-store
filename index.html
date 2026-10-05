@@ -4,474 +4,382 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LUMIÉA — Little things that make home feel magical.</title>
+<meta name="description" content="LUMIÉA — dreamy, playful home décor, lighting and everyday cute finds.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="site-header">
-  <a class="logo" href="#">LUMIÉA<span>✦</span></a>
+  <a class="logo" href="#top">LUMIÉA<span>✦</span></a>
   <nav>
-    <a href="#shop">Shop</a><a href="#collections">Collections</a><a href="#about">About</a><a href="#faq">FAQ</a>
+    <a href="#shop">SHOP</a><a href="#collections">COLLECTIONS</a><a href="#about">ABOUT</a><a href="#faq">FAQ</a>
   </nav>
-  <button class="bag" id="bagBtn">Bag <span id="bagCount">0</span></button>
+  <button id="bagToggle" class="bag">Bag <span id="bagCount">0</span></button>
 </header>
 
-<main>
+<main id="top">
 <section class="hero">
   <div>
-    <p class="eyebrow">WHIMSICAL HOME • DREAMY DETAILS</p>
-    <h1>Make your space feel a little more magical.</h1>
-    <p class="hero-copy">Lighting, decor and playful everyday pieces for rooms that feel like you.</p>
-    <a class="hero-btn" href="#shop">Shop the full collection</a>
+    <p class="eyebrow">WELCOME TO LUMIÉA</p>
+    <h1>Make your space feel a little more <em>magical.</em></h1>
+    <p class="hero-copy">Little things that make home feel magical — from dreamy lights to playful everyday pieces.</p>
+    <a class="primary" href="#shop">Shop the full collection</a>
   </div>
-  <div class="hero-art"><span>🌸</span><span>🌙</span><span>🪴</span></div>
+  <div class="hero-art"><div class="orb">✦</div><div class="spark s1">✧</div><div class="spark s2">✦</div><div class="spark s3">✧</div></div>
 </section>
 
 <section id="collections" class="collections">
-  <div><p class="eyebrow">SHOP BY MOOD</p><h2>Every little corner has a place.</h2></div>
+  <div class="section-head"><p class="eyebrow">SHOP BY MOOD</p><h2>Find your little corner of magic.</h2></div>
   <div class="collection-grid">
-    <button data-jump="DREAM ROOM">🌙 <b>Dream Room</b><small>Lighting & nighttime pieces</small></button>
-    <button data-jump="BLOOM">🌸 <b>Bloom</b><small>Floral decor & planters</small></button>
-    <button data-jump="CUTE CORNER">🎀 <b>Cute Corner</b><small>Playful character decor</small></button>
-    <button data-jump="EVERYDAY CUTE">🏡 <b>Everyday Cute</b><small>Useful pieces with personality</small></button>
+    <button data-filter="DREAM ROOM">🌙 <strong>DREAM ROOM</strong><span>Lights, lamps & dreamy décor</span></button>
+    <button data-filter="BLOOM">🌸 <strong>BLOOM</strong><span>Flowers, vases & plant friends</span></button>
+    <button data-filter="CUTE CORNER">🎀 <strong>CUTE CORNER</strong><span>Playful pieces with personality</span></button>
+    <button data-filter="EVERYDAY CUTE">🏡 <strong>EVERYDAY CUTE</strong><span>Useful things, made adorable</span></button>
   </div>
 </section>
 
 <section id="shop" class="shop">
   <div class="shop-head">
-    <div><p class="eyebrow">THE FULL LUMIÉA COLLECTION</p><h2>All products</h2><p>29 products organized into collections.</p></div>
-    <div class="filters"><button class="filter active" data-filter="ALL">All</button><button class="filter " data-filter="DREAM ROOM">Dream Room</button><button class="filter " data-filter="BLOOM">Bloom</button><button class="filter " data-filter="CUTE CORNER">Cute Corner</button><button class="filter " data-filter="EVERYDAY CUTE">Everyday Cute</button></div>
+    <div><p class="eyebrow">THE FULL COLLECTION</p><h2>Everything cute, cozy & magical.</h2><p class="count"><span id="visibleCount">28</span> products</p></div>
+    <div class="filters">
+      <button class="filter active" data-filter="ALL">All</button>
+      <button class="filter" data-filter="DREAM ROOM">Dream Room</button>
+      <button class="filter" data-filter="BLOOM">Bloom</button>
+      <button class="filter" data-filter="CUTE CORNER">Cute Corner</button>
+      <button class="filter" data-filter="EVERYDAY CUTE">Everyday Cute</button>
+    </div>
   </div>
-  <div class="product-grid" id="productGrid">
-      <article class="product-card" data-category="DREAM ROOM">
-        <div class="product-image">
-          <img src="assets/products/01-lotus-bloom-pendant-lamp.svg" alt="Lotus Bloom Pendant Lamp">
-          <span class="badge">DREAM ROOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Lotus Bloom Pendant Lamp</h3>
-          <p>Floral lighting that turns a room into a soft, dreamy space.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Lotus Bloom Pendant Lamp">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="DREAM ROOM">
-        <div class="product-image">
-          <img src="assets/products/02-panda-moon-night-light.svg" alt="Panda Moon Night Light">
-          <span class="badge">DREAM ROOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Panda Moon Night Light</h3>
-          <p>A cute ambient light for bedrooms, desks and cozy corners.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Panda Moon Night Light">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="DREAM ROOM">
-        <div class="product-image">
-          <img src="assets/products/03-jellyfish-ambient-lamp.svg" alt="Jellyfish Ambient Lamp">
-          <span class="badge">DREAM ROOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Jellyfish Ambient Lamp</h3>
-          <p>A whimsical jellyfish-inspired glow for a magical room atmosphere.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Jellyfish Ambient Lamp">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="DREAM ROOM">
-        <div class="product-image">
-          <img src="assets/products/04-mushroom-touch-lamp.svg" alt="Mushroom Touch Lamp">
-          <span class="badge">DREAM ROOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Mushroom Touch Lamp</h3>
-          <p>A playful touch lamp made for cozy nighttime lighting.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Mushroom Touch Lamp">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="DREAM ROOM">
-        <div class="product-image">
-          <img src="assets/products/05-color-changing-mug-lamp.svg" alt="Color-Changing Mug Lamp">
-          <span class="badge">DREAM ROOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Color-Changing Mug Lamp</h3>
-          <p>A cute mug-inspired light for desks, nightstands and shelves.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Color-Changing Mug Lamp">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="DREAM ROOM">
-        <div class="product-image">
-          <img src="assets/products/06-toast-alarm-clock-lamp.svg" alt="Toast Alarm Clock Lamp">
-          <span class="badge">DREAM ROOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Toast Alarm Clock Lamp</h3>
-          <p>A playful toast-inspired bedside accent with a fun clock look.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Toast Alarm Clock Lamp">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="DREAM ROOM">
-        <div class="product-image">
-          <img src="assets/products/07-pink-illuminated-globe.svg" alt="Pink Illuminated Globe">
-          <span class="badge">DREAM ROOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Pink Illuminated Globe</h3>
-          <p>A dreamy glowing globe that doubles as room decor.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Pink Illuminated Globe">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="DREAM ROOM">
-        <div class="product-image">
-          <img src="assets/products/08-cute-decorative-wall-clock.svg" alt="Cute Decorative Wall Clock">
-          <span class="badge">DREAM ROOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Cute Decorative Wall Clock</h3>
-          <p>Playful wall clocks that add personality without feeling ordinary.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Cute Decorative Wall Clock">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="BLOOM">
-        <div class="product-image">
-          <img src="assets/products/09-character-planter.svg" alt="Character Planter">
-          <span class="badge">BLOOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Character Planter</h3>
-          <p>A playful planter designed to make your plant corner feel alive.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Character Planter">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="BLOOM">
-        <div class="product-image">
-          <img src="assets/products/10-sculptural-flower-vase.svg" alt="Sculptural Flower Vase">
-          <span class="badge">BLOOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Sculptural Flower Vase</h3>
-          <p>A statement vase with a soft sculptural floral silhouette.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Sculptural Flower Vase">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="BLOOM">
-        <div class="product-image">
-          <img src="assets/products/11-flower-shaped-sink-basin.svg" alt="Flower-Shaped Sink Basin">
-          <span class="badge">BLOOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Flower-Shaped Sink Basin</h3>
-          <p>A dramatic floral-inspired sink centerpiece for a statement bathroom.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Flower-Shaped Sink Basin">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="BLOOM">
-        <div class="product-image">
-          <img src="assets/products/12-petal-soap-dish.svg" alt="Petal Soap Dish">
-          <span class="badge">BLOOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Petal Soap Dish</h3>
-          <p>A pretty floral soap dish for a softer bathroom countertop.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Petal Soap Dish">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="BLOOM">
-        <div class="product-image">
-          <img src="assets/products/13-character-plant-pot.svg" alt="Character Plant Pot">
-          <span class="badge">BLOOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Character Plant Pot</h3>
-          <p>A cute character-style pot for small plants and desk greenery.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Character Plant Pot">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="BLOOM">
-        <div class="product-image">
-          <img src="assets/products/14-purple-sand-ceramic-flower-pot.svg" alt="Purple Sand Ceramic Flower Pot">
-          <span class="badge">BLOOM</span>
-        </div>
-        <div class="product-info">
-          <h3>Purple Sand Ceramic Flower Pot</h3>
-          <p>A textured ceramic pot for plants, shelves and cozy corners.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Purple Sand Ceramic Flower Pot">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="CUTE CORNER">
-        <div class="product-image">
-          <img src="assets/products/15-duckie-desk-buddy.svg" alt="Duckie Desk Buddy">
-          <span class="badge">CUTE CORNER</span>
-        </div>
-        <div class="product-info">
-          <h3>Duckie Desk Buddy</h3>
-          <p>A cheerful duck-shaped organizer for pens and small desk essentials.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Duckie Desk Buddy">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="CUTE CORNER">
-        <div class="product-image">
-          <img src="assets/products/16-duck-bookends.svg" alt="Duck Bookends">
-          <span class="badge">CUTE CORNER</span>
-        </div>
-        <div class="product-info">
-          <h3>Duck Bookends</h3>
-          <p>Playful duck bookends that make a shelf or reading nook more fun.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Duck Bookends">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="CUTE CORNER">
-        <div class="product-image">
-          <img src="assets/products/17-cute-animal-light-switch-covers.svg" alt="Cute Animal Light-Switch Covers">
-          <span class="badge">CUTE CORNER</span>
-        </div>
-        <div class="product-info">
-          <h3>Cute Animal Light-Switch Covers</h3>
-          <p>Small decorative switch covers that add character to a room.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Cute Animal Light-Switch Covers">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="CUTE CORNER">
-        <div class="product-image">
-          <img src="assets/products/18-fairy-pink-outlet-cover.svg" alt="Fairy Pink Outlet Cover">
-          <span class="badge">CUTE CORNER</span>
-        </div>
-        <div class="product-info">
-          <h3>Fairy Pink Outlet Cover</h3>
-          <p>A whimsical decorative outlet cover for a magical-room aesthetic.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Fairy Pink Outlet Cover">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="CUTE CORNER">
-        <div class="product-image">
-          <img src="assets/products/19-bunny-corner-decor.svg" alt="Bunny Corner Decor">
-          <span class="badge">CUTE CORNER</span>
-        </div>
-        <div class="product-info">
-          <h3>Bunny Corner Decor</h3>
-          <p>Tiny bunny-inspired decor for shelves, corners and display spaces.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Bunny Corner Decor">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="CUTE CORNER">
-        <div class="product-image">
-          <img src="assets/products/20-panda-display-organizer.svg" alt="Panda Display Organizer">
-          <span class="badge">CUTE CORNER</span>
-        </div>
-        <div class="product-info">
-          <h3>Panda Display Organizer</h3>
-          <p>A cute panda-inspired tray/display organizer for everyday bits and pieces.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Panda Display Organizer">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="EVERYDAY CUTE">
-        <div class="product-image">
-          <img src="assets/products/21-minimal-rounded-tissue-holder.svg" alt="Minimal Rounded Tissue Holder">
-          <span class="badge">EVERYDAY CUTE</span>
-        </div>
-        <div class="product-info">
-          <h3>Minimal Rounded Tissue Holder</h3>
-          <p>A clean rounded tissue holder that blends into a cute modern room.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Minimal Rounded Tissue Holder">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="EVERYDAY CUTE">
-        <div class="product-image">
-          <img src="assets/products/22-cute-fries-ceramic-dish.svg" alt="Cute Fries Ceramic Dish">
-          <span class="badge">EVERYDAY CUTE</span>
-        </div>
-        <div class="product-info">
-          <h3>Cute Fries Ceramic Dish</h3>
-          <p>A playful serving or snack dish for fun tablescapes.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Cute Fries Ceramic Dish">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="EVERYDAY CUTE">
-        <div class="product-image">
-          <img src="assets/products/23-face-shaped-glasses-holder.svg" alt="Face-Shaped Glasses Holder">
-          <span class="badge">EVERYDAY CUTE</span>
-        </div>
-        <div class="product-info">
-          <h3>Face-Shaped Glasses Holder</h3>
-          <p>A sculptural holder for glasses and small accessories.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Face-Shaped Glasses Holder">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="EVERYDAY CUTE">
-        <div class="product-image">
-          <img src="assets/products/24-sculptural-phone-stand.svg" alt="Sculptural Phone Stand">
-          <span class="badge">EVERYDAY CUTE</span>
-        </div>
-        <div class="product-info">
-          <h3>Sculptural Phone Stand</h3>
-          <p>A decorative stand that keeps your phone displayed and easy to reach.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Sculptural Phone Stand">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="EVERYDAY CUTE">
-        <div class="product-image">
-          <img src="assets/products/25-egg-candle-holder.svg" alt="Egg Candle Holder">
-          <span class="badge">EVERYDAY CUTE</span>
-        </div>
-        <div class="product-info">
-          <h3>Egg Candle Holder</h3>
-          <p>A sculptural candle accent with a soft egg-inspired shape.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Egg Candle Holder">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="EVERYDAY CUTE">
-        <div class="product-image">
-          <img src="assets/products/26-cat-tray-organizer.svg" alt="Cat Tray Organizer">
-          <span class="badge">EVERYDAY CUTE</span>
-        </div>
-        <div class="product-info">
-          <h3>Cat Tray Organizer</h3>
-          <p>A cute tray for jewelry, small accessories and everyday items.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Cat Tray Organizer">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="EVERYDAY CUTE">
-        <div class="product-image">
-          <img src="assets/products/27-pink-pig-cleaning-set.svg" alt="Pink Pig Cleaning Set">
-          <span class="badge">EVERYDAY CUTE</span>
-        </div>
-        <div class="product-info">
-          <h3>Pink Pig Cleaning Set</h3>
-          <p>A playful cleaning set that makes an everyday chore feel cuter.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Pink Pig Cleaning Set">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="EVERYDAY CUTE">
-        <div class="product-image">
-          <img src="assets/products/28-pink-toothbrush-holder.svg" alt="Pink Toothbrush Holder">
-          <span class="badge">EVERYDAY CUTE</span>
-        </div>
-        <div class="product-info">
-          <h3>Pink Toothbrush Holder</h3>
-          <p>A cute bathroom organizer for toothbrushes and small essentials.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Pink Toothbrush Holder">Add to bag</button>
-          </div>
-        </div>
-      </article>
-      <article class="product-card" data-category="EVERYDAY CUTE">
-        <div class="product-image">
-          <img src="assets/products/29-cute-tissue-box-cover.svg" alt="Cute Tissue Box Cover">
-          <span class="badge">EVERYDAY CUTE</span>
-        </div>
-        <div class="product-info">
-          <h3>Cute Tissue Box Cover</h3>
-          <p>A character-inspired tissue cover that turns an ordinary item into decor.</p>
-          <div class="product-bottom">
-            <span class="price">Price TBD</span>
-            <button class="add" data-name="Cute Tissue Box Cover">Add to bag</button>
-          </div>
-        </div>
-      </article></div>
+  <div id="productGrid" class="product-grid">
+    <article class="product-card" data-category="DREAM ROOM" data-title="lotus bloom pendant lamp">
+      <button class="product-image" aria-label="View Lotus Bloom Pendant Lamp">
+        <img src="assets/products/lotus-bloom-pendant.jpg" alt="Lotus Bloom Pendant Lamp" loading="lazy">
+        <span class="badge">Dream Room</span>
+      </button>
+      <div class="card-body">
+        <h3>Lotus Bloom Pendant Lamp</h3>
+        <p>A dreamy lotus-inspired pendant that turns a ceiling into a soft floral statement.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Lotus Bloom Pendant Lamp">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="DREAM ROOM" data-title="panda moon night light">
+      <button class="product-image" aria-label="View Panda Moon Night Light">
+        <img src="assets/products/panda-moon-night-light.jpg" alt="Panda Moon Night Light" loading="lazy">
+        <span class="badge">Dream Room</span>
+      </button>
+      <div class="card-body">
+        <h3>Panda Moon Night Light</h3>
+        <p>A playful panda holding a glowing moon for cozy bedside ambience.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Panda Moon Night Light">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="DREAM ROOM" data-title="jellyfish ambient lamp">
+      <button class="product-image" aria-label="View Jellyfish Ambient Lamp">
+        <img src="assets/products/jellyfish-ambient-lamp.jpg" alt="Jellyfish Ambient Lamp" loading="lazy">
+        <span class="badge">Dream Room</span>
+      </button>
+      <div class="card-body">
+        <h3>Jellyfish Ambient Lamp</h3>
+        <p>A whimsical jellyfish-inspired ambient light for desks, shelves and nightstands.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Jellyfish Ambient Lamp">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="DREAM ROOM" data-title="mushroom touch lamp">
+      <button class="product-image" aria-label="View Mushroom Touch Lamp">
+        <img src="assets/products/mushroom-touch-lamp.jpg" alt="Mushroom Touch Lamp" loading="lazy">
+        <span class="badge">Dream Room</span>
+      </button>
+      <div class="card-body">
+        <h3>Mushroom Touch Lamp</h3>
+        <p>A soft mushroom-shaped touch lamp made for warm, cozy corners.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Mushroom Touch Lamp">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="DREAM ROOM" data-title="color-changing mug lamp">
+      <button class="product-image" aria-label="View Color-Changing Mug Lamp">
+        <img src="assets/products/color-changing-mug-lamp.jpg" alt="Color-Changing Mug Lamp" loading="lazy">
+        <span class="badge">Dream Room</span>
+      </button>
+      <div class="card-body">
+        <h3>Color-Changing Mug Lamp</h3>
+        <p>A cute mug-shaped lamp with colorful lighting for a playful room glow.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Color-Changing Mug Lamp">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="DREAM ROOM" data-title="toast alarm clock lamp">
+      <button class="product-image" aria-label="View Toast Alarm Clock Lamp">
+        <img src="assets/products/toast-alarm-clock-lamp.jpg" alt="Toast Alarm Clock Lamp" loading="lazy">
+        <span class="badge">Dream Room</span>
+      </button>
+      <div class="card-body">
+        <h3>Toast Alarm Clock Lamp</h3>
+        <p>A cheerful toast-inspired bedside alarm clock with a soft illuminated top.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Toast Alarm Clock Lamp">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="DREAM ROOM" data-title="pink illuminated globe">
+      <button class="product-image" aria-label="View Pink Illuminated Globe">
+        <img src="assets/products/pink-illuminated-globe.jpg" alt="Pink Illuminated Globe" loading="lazy">
+        <span class="badge">Dream Room</span>
+      </button>
+      <div class="card-body">
+        <h3>Pink Illuminated Globe</h3>
+        <p>A pink globe with warm illumination that doubles as dreamy room décor.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Pink Illuminated Globe">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="DREAM ROOM" data-title="cute decorative wall clocks">
+      <button class="product-image" aria-label="View Cute Decorative Wall Clocks">
+        <img src="assets/products/cute-decorative-wall-clocks.jpg" alt="Cute Decorative Wall Clocks" loading="lazy">
+        <span class="badge">Dream Room</span>
+      </button>
+      <div class="card-body">
+        <h3>Cute Decorative Wall Clocks</h3>
+        <p>Playful statement clocks in whimsical shapes for bedrooms, desks and gallery walls.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Cute Decorative Wall Clocks">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="BLOOM" data-title="character planter">
+      <button class="product-image" aria-label="View Character Planter">
+        <img src="assets/products/character-planter.jpg" alt="Character Planter" loading="lazy">
+        <span class="badge">Bloom</span>
+      </button>
+      <div class="card-body">
+        <h3>Character Planter</h3>
+        <p>A whimsical character planter designed to make small plants feel like décor.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Character Planter">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="BLOOM" data-title="sculptural flower vase">
+      <button class="product-image" aria-label="View Sculptural Flower Vase">
+        <img src="assets/products/sculptural-flower-vase.jpg" alt="Sculptural Flower Vase" loading="lazy">
+        <span class="badge">Bloom</span>
+      </button>
+      <div class="card-body">
+        <h3>Sculptural Flower Vase</h3>
+        <p>A sculptural organic vase that makes even simple stems look artistic.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Sculptural Flower Vase">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="BLOOM" data-title="flower-shaped sink basin">
+      <button class="product-image" aria-label="View Flower-Shaped Sink Basin">
+        <img src="assets/products/flower-sink-basin.jpg" alt="Flower-Shaped Sink Basin" loading="lazy">
+        <span class="badge">Bloom</span>
+      </button>
+      <div class="card-body">
+        <h3>Flower-Shaped Sink Basin</h3>
+        <p>A dramatic flower-shaped basin that turns an everyday sink area into a statement.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Flower-Shaped Sink Basin">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="BLOOM" data-title="petal soap dish">
+      <button class="product-image" aria-label="View Petal Soap Dish">
+        <img src="assets/products/petal-soap-dish.jpg" alt="Petal Soap Dish" loading="lazy">
+        <span class="badge">Bloom</span>
+      </button>
+      <div class="card-body">
+        <h3>Petal Soap Dish</h3>
+        <p>A floral soap dish with a delicate botanical look for a prettier sink.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Petal Soap Dish">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="BLOOM" data-title="character plant pot">
+      <button class="product-image" aria-label="View Character Plant Pot">
+        <img src="assets/products/character-plant-pot.jpg" alt="Character Plant Pot" loading="lazy">
+        <span class="badge">Bloom</span>
+      </button>
+      <div class="card-body">
+        <h3>Character Plant Pot</h3>
+        <p>A playful seated planter that gives small greenery a charming little personality.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Character Plant Pot">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="BLOOM" data-title="lumiéa plant buddy">
+      <button class="product-image" aria-label="View LUMIÉA Plant Buddy">
+        <img src="assets/products/plant-buddy-correct.jpg" alt="LUMIÉA Plant Buddy" loading="lazy">
+        <span class="badge">Bloom</span>
+      </button>
+      <div class="card-body">
+        <h3>LUMIÉA Plant Buddy</h3>
+        <p>A rounded mint-green self-watering planter designed to make plant care feel simple and cute.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="LUMIÉA Plant Buddy">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="CUTE CORNER" data-title="duckie desk buddy">
+      <button class="product-image" aria-label="View Duckie Desk Buddy">
+        <img src="assets/products/duckie-desk-buddy.jpg" alt="Duckie Desk Buddy" loading="lazy">
+        <span class="badge">Cute Corner</span>
+      </button>
+      <div class="card-body">
+        <h3>Duckie Desk Buddy</h3>
+        <p>A cheerful duck-shaped pen and desk holder that makes a workspace more fun.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Duckie Desk Buddy">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="CUTE CORNER" data-title="duck bookends">
+      <button class="product-image" aria-label="View Duck Bookends">
+        <img src="assets/products/duck-bookends.jpg" alt="Duck Bookends" loading="lazy">
+        <span class="badge">Cute Corner</span>
+      </button>
+      <div class="card-body">
+        <h3>Duck Bookends</h3>
+        <p>Cute duck bookends for keeping favorite books upright and adding personality.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Duck Bookends">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="CUTE CORNER" data-title="bunny corner decor">
+      <button class="product-image" aria-label="View Bunny Corner Decor">
+        <img src="assets/products/bunny-corner-decor.jpg" alt="Bunny Corner Decor" loading="lazy">
+        <span class="badge">Cute Corner</span>
+      </button>
+      <div class="card-body">
+        <h3>Bunny Corner Decor</h3>
+        <p>A tiny bunny figure designed to peek out from a shelf or corner.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Bunny Corner Decor">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="CUTE CORNER" data-title="panda display organizer">
+      <button class="product-image" aria-label="View Panda Display Organizer">
+        <img src="assets/products/panda-display-organizer.jpg" alt="Panda Display Organizer" loading="lazy">
+        <span class="badge">Cute Corner</span>
+      </button>
+      <div class="card-body">
+        <h3>Panda Display Organizer</h3>
+        <p>A playful panda display piece for jewelry, perfume, keys or little treasures.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Panda Display Organizer">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="EVERYDAY CUTE" data-title="minimal rounded tissue holder">
+      <button class="product-image" aria-label="View Minimal Rounded Tissue Holder">
+        <img src="assets/products/minimal-rounded-tissue-holder.jpg" alt="Minimal Rounded Tissue Holder" loading="lazy">
+        <span class="badge">Everyday Cute</span>
+      </button>
+      <div class="card-body">
+        <h3>Minimal Rounded Tissue Holder</h3>
+        <p>A soft rounded tissue holder that blends into cozy, minimal interiors.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Minimal Rounded Tissue Holder">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="EVERYDAY CUTE" data-title="cute fries ceramic dish">
+      <button class="product-image" aria-label="View Cute Fries Ceramic Dish">
+        <img src="assets/products/cute-fries-ceramic-dish.jpg" alt="Cute Fries Ceramic Dish" loading="lazy">
+        <span class="badge">Everyday Cute</span>
+      </button>
+      <div class="card-body">
+        <h3>Cute Fries Ceramic Dish</h3>
+        <p>A fun ceramic serving dish with a fries-and-dip design for snacks and sauces.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Cute Fries Ceramic Dish">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="EVERYDAY CUTE" data-title="face-shaped glasses holder">
+      <button class="product-image" aria-label="View Face-Shaped Glasses Holder">
+        <img src="assets/products/face-shaped-glasses-holder.jpg" alt="Face-Shaped Glasses Holder" loading="lazy">
+        <span class="badge">Everyday Cute</span>
+      </button>
+      <div class="card-body">
+        <h3>Face-Shaped Glasses Holder</h3>
+        <p>A sculptural face stand that gives your glasses a stylish little home.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Face-Shaped Glasses Holder">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="EVERYDAY CUTE" data-title="sculptural phone stand">
+      <button class="product-image" aria-label="View Sculptural Phone Stand">
+        <img src="assets/products/sculptural-phone-stand.jpg" alt="Sculptural Phone Stand" loading="lazy">
+        <span class="badge">Everyday Cute</span>
+      </button>
+      <div class="card-body">
+        <h3>Sculptural Phone Stand</h3>
+        <p>A playful sculptural stand for propping up your phone on a desk or nightstand.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Sculptural Phone Stand">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="EVERYDAY CUTE" data-title="egg candle holder">
+      <button class="product-image" aria-label="View Egg Candle Holder">
+        <img src="assets/products/egg-candle-holder.jpg" alt="Egg Candle Holder" loading="lazy">
+        <span class="badge">Everyday Cute</span>
+      </button>
+      <div class="card-body">
+        <h3>Egg Candle Holder</h3>
+        <p>A cracked-egg inspired candle holder for warm, quirky tabletop décor.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Egg Candle Holder">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="EVERYDAY CUTE" data-title="cat tray organizer">
+      <button class="product-image" aria-label="View Cat Tray Organizer">
+        <img src="assets/products/cat-tray-organizer.jpg" alt="Cat Tray Organizer" loading="lazy">
+        <span class="badge">Everyday Cute</span>
+      </button>
+      <div class="card-body">
+        <h3>Cat Tray Organizer</h3>
+        <p>A charming cat-shaped tray for perfume, jewelry, keys and other small essentials.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Cat Tray Organizer">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="EVERYDAY CUTE" data-title="pink pig cleaning set">
+      <button class="product-image" aria-label="View Pink Pig Cleaning Set">
+        <img src="assets/products/pink-pig-cleaning-set.jpg" alt="Pink Pig Cleaning Set" loading="lazy">
+        <span class="badge">Everyday Cute</span>
+      </button>
+      <div class="card-body">
+        <h3>Pink Pig Cleaning Set</h3>
+        <p>A cute pink pig cleaning set that makes an everyday chore feel less boring.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Pink Pig Cleaning Set">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="EVERYDAY CUTE" data-title="pink toothbrush holder">
+      <button class="product-image" aria-label="View Pink Toothbrush Holder">
+        <img src="assets/products/pink-toothbrush-holder.jpg" alt="Pink Toothbrush Holder" loading="lazy">
+        <span class="badge">Everyday Cute</span>
+      </button>
+      <div class="card-body">
+        <h3>Pink Toothbrush Holder</h3>
+        <p>A compact pink toothbrush organizer with a cute, clean look.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Pink Toothbrush Holder">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="EVERYDAY CUTE" data-title="cute tissue box cover">
+      <button class="product-image" aria-label="View Cute Tissue Box Cover">
+        <img src="assets/products/minimal-rounded-tissue-holder.jpg" alt="Cute Tissue Box Cover" loading="lazy">
+        <span class="badge">Everyday Cute</span>
+      </button>
+      <div class="card-body">
+        <h3>Cute Tissue Box Cover</h3>
+        <p>A cute tissue-box styling piece using the supplied rounded tissue-holder photo.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Cute Tissue Box Cover">Add to bag</button></div>
+      </div>
+    </article>
+    <article class="product-card" data-category="EVERYDAY CUTE" data-title="shark condiment serving dish">
+      <button class="product-image" aria-label="View Shark Condiment Serving Dish">
+        <img src="assets/products/shark-condiment-dish-correct.jpg" alt="Shark Condiment Serving Dish" loading="lazy">
+        <span class="badge">Everyday Cute</span>
+      </button>
+      <div class="card-body">
+        <h3>Shark Condiment Serving Dish</h3>
+        <p>A playful shark caddy with fish-shaped condiment dishes for sauces, dips and small snacks.</p>
+        <div class="card-bottom"><span class="price">Price TBD</span><button class="bag-btn" data-product="Shark Condiment Serving Dish">Add to bag</button></div>
+      </div>
+    </article></div>
 </section>
 
 <section id="about" class="about">
-  <p class="eyebrow">ABOUT LUMIÉA</p>
-  <h2>Your home doesn't have to look like everyone else's.</h2>
-  <p>LUMIÉA brings together dreamy lighting, playful decor and little everyday pieces that make a space feel more personal.</p>
+  <div><p class="eyebrow">OUR LITTLE WORLD</p><h2>Home should feel like you.</h2></div>
+  <p>LUMIÉA is a dreamy little home-decor shop built around the idea that the smallest details can change the feeling of a room. We curate playful lighting, floral pieces, cute organizers and everyday finds that make your space feel warmer, softer and more you.</p>
 </section>
 
 <section id="faq" class="faq">
-  <p class="eyebrow">FAQ</p>
-  <details><summary>How long is shipping?</summary><p>Delivery varies by product and destination. The final delivery estimate should be shown before purchase once supplier shipping is verified.</p></details>
-  <details><summary>Are the photos final?</summary><p>The current ZIP uses branded local placeholders. Replace each with supplier-approved commercial product media before launch.</p></details>
-  <details><summary>How do payments work?</summary><p>Connect your verified WiPay payment links in the checkout configuration. Never put private API keys in this website's JavaScript.</p></details>
+  <p class="eyebrow">FAQ</p><h2>Good to know.</h2>
+  <details><summary>How long does delivery take?</summary><p>Delivery time varies by product and destination. The final estimated delivery window should be confirmed before purchase.</p></details>
+  <details><summary>Are the prices final?</summary><p>Not yet. Product prices are marked “Price TBD” until supplier cost, shipping, payment fees and your target margin are verified.</p></details>
+  <details><summary>What if my order arrives damaged?</summary><p>Contact LUMIÉA promptly with your order number and clear photos/video of the issue so we can review it.</p></details>
+  <details><summary>Are the photos ready for commercial use?</summary><p>These are the product inspiration photos supplied in this conversation. Before selling, confirm that the matching supplier listing provides commercial-use product media or replace the images with supplier-approved media.</p></details>
 </section>
 </main>
 
-<div class="cart-panel" id="cartPanel">
-  <div class="cart-head"><h2>Your bag</h2><button id="closeBag">×</button></div>
-  <div id="cartItems"></div>
-  <div class="cart-foot"><strong>Total items</strong><span id="cartTotal">0</span></div>
-  <button class="checkout" id="checkout">Continue to checkout</button>
-</div>
-<div class="overlay" id="overlay"></div>
-
-<footer><span>© 2026 LUMIÉA</span><span>Little things that make home feel magical.</span></footer>
+<aside id="bagPanel" class="bag-panel" aria-hidden="true">
+  <div class="bag-panel-head"><h2>Your bag</h2><button id="closeBag">×</button></div>
+  <div id="bagItems"><p>Your bag is empty.</p></div>
+  <div class="bag-foot"><p>Checkout will be connected after payment setup.</p><button class="primary" id="checkoutBtn">Checkout</button></div>
+</aside>
+<div id="lightbox" class="lightbox" aria-hidden="true"><button id="closeLightbox">×</button><img id="lightboxImg" alt=""></div>
+<div id="toast" class="toast"></div>
+<footer><div class="logo">LUMIÉA<span>✦</span></div><p>Little things that make home feel magical.</p><small>© 2026 LUMIÉA</small></footer>
 <script src="script.js"></script>
 </body></html>

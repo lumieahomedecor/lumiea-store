@@ -1,46 +1,32 @@
-const products = [...document.querySelectorAll(".product-card")];
-const filters = [...document.querySelectorAll(".filter")];
-const bag = [];
-const panel = document.getElementById("cartPanel");
-const overlay = document.getElementById("overlay");
-const itemsEl = document.getElementById("cartItems");
-const countEl = document.getElementById("bagCount");
-const totalEl = document.getElementById("cartTotal");
-
-function renderCart(){
-  itemsEl.innerHTML = bag.length ? bag.map((x,i)=>`<div class="cart-item"><b>${x}</b><button onclick="removeItem(${i})">Remove</button></div>`).join("") : "<p>Your bag is empty.</p>";
-  countEl.textContent = bag.length;
-  totalEl.textContent = bag.length;
+const cards=[...document.querySelectorAll('.product-card')];
+const filters=[...document.querySelectorAll('[data-filter]')];
+const count=document.getElementById('visibleCount');
+function setFilter(filter){
+  cards.forEach(c=>c.hidden=filter!=='ALL' && c.dataset.category!==filter);
+  document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.filter===filter));
+  count.textContent=cards.filter(c=>!c.hidden).length;
+  document.getElementById('shop').scrollIntoView({behavior:'smooth',block:'start'});
 }
-window.removeItem = i => { bag.splice(i,1); renderCart(); };
-
-document.querySelectorAll(".add").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    bag.push(btn.dataset.name);
-    renderCart();
-    panel.classList.add("open"); overlay.classList.add("show");
-  });
-});
-document.getElementById("bagBtn").onclick=()=>{panel.classList.add("open");overlay.classList.add("show")};
-document.getElementById("closeBag").onclick=()=>{panel.classList.remove("open");overlay.classList.remove("show")};
-overlay.onclick=()=>{panel.classList.remove("open");overlay.classList.remove("show")};
-document.getElementById("checkout").onclick=()=>{
-  alert("Checkout is ready for your WiPay payment-link setup. Add your verified payment links before accepting orders.");
-};
-
-filters.forEach(btn=>{
-  btn.onclick=()=>{
-    filters.forEach(x=>x.classList.remove("active")); btn.classList.add("active");
-    const f=btn.dataset.filter;
-    products.forEach(p=>p.style.display=(f==="ALL"||p.dataset.category===f)?"":"none");
-  };
-});
-document.querySelectorAll("[data-jump]").forEach(btn=>{
-  btn.onclick=()=>{
-    const f=btn.dataset.jump;
-    document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x.dataset.filter===f));
-    products.forEach(p=>p.style.display=p.dataset.category===f?"":"none");
-    document.getElementById("shop").scrollIntoView({behavior:"smooth"});
-  };
-});
-renderCart();
+filters.forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.filter)));
+const bag=[];
+const bagPanel=document.getElementById('bagPanel');
+const bagCount=document.getElementById('bagCount');
+const bagItems=document.getElementById('bagItems');
+function renderBag(){
+  bagCount.textContent=bag.length;
+  bagItems.innerHTML=bag.length?bag.map((x,i)=>`<div class="bag-row"><span>${x}</span><button onclick="removeBag(${i})">Remove</button></div>`).join(''):'<p>Your bag is empty.</p>';
+}
+window.removeBag=i=>{bag.splice(i,1);renderBag()};
+document.querySelectorAll('.bag-btn').forEach(b=>b.addEventListener('click',()=>{
+  bag.push(b.dataset.product);renderBag();
+  const t=document.getElementById('toast');t.textContent='Added to your LUMIÉA bag ✦';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1400);
+}));
+document.getElementById('bagToggle').onclick=()=>bagPanel.classList.add('open');
+document.getElementById('closeBag').onclick=()=>bagPanel.classList.remove('open');
+document.getElementById('checkoutBtn').onclick=()=>alert('Checkout is not connected yet. Payment setup comes next.');
+document.querySelectorAll('.product-image').forEach(btn=>btn.addEventListener('click',()=>{
+  const img=btn.querySelector('img');document.getElementById('lightboxImg').src=img.src;document.getElementById('lightboxImg').alt=img.alt;document.getElementById('lightbox').classList.add('open');
+}));
+document.getElementById('closeLightbox').onclick=()=>document.getElementById('lightbox').classList.remove('open');
+document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')e.currentTarget.classList.remove('open')});
+renderBag();
